@@ -32,6 +32,10 @@ public class Schedule {
     private ScheduleStatus        status;
     private LocalDateTime         lastPaymentData;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customer customer;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "recurringpayment_id", referencedColumnName = "id")
     private RecurringPayment      recurringPayment;

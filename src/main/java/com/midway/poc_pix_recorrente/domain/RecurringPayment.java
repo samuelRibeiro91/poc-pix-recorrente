@@ -24,9 +24,9 @@ public class RecurringPayment {
     @Id
     @GeneratedValue
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    private UUID id;
+    private UUID            id;
     private String          description;
     private String          pixDestinationKey;
-    private BigDecimal value;
-    private LocalDateTime created_at;
+    private BigDecimal      value;
+    private LocalDateTime   created_at;
 }
