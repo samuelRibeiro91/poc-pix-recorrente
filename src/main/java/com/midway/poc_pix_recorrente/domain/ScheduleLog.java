@@ -26,12 +26,12 @@ public class ScheduleLog {
     @ManyToOne
     @JoinColumn(name = "schedule_id", referencedColumnName = "id")
     @JsonIgnore
-    private Schedule schedule;
-
+    private Schedule      schedule;
     private LocalDateTime created_at;
-    private StatusLog status;
+    private LogStatus     status;
+    private String        description;
 
-    public enum StatusLog {
+    public enum LogStatus {
         APPROVED,
         REJECTED,
         MANUAL_REVIEW

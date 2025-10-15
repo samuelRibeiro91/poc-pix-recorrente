@@ -28,11 +28,17 @@ public class Schedule {
     private LocalDate             startDate;
     private LocalDate             endDate;
     private int                   dayOfMonth;
+
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime         created_at;
+
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private ScheduleStatus        status;
+
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime         lastPaymentData;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
@@ -48,6 +54,8 @@ public class Schedule {
     }
 
     public enum ScheduleStatus {
+        PENDING,
+        REJECTED,
         ACTIVE,
         PAUSED,
         CANCELED
