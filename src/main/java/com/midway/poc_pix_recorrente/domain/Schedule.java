@@ -1,5 +1,7 @@
 package com.midway.poc_pix_recorrente.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +21,7 @@ import java.util.UUID;
 public class Schedule {
     @Id
     @GeneratedValue
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private UUID id;
     private String                description;
     private FrequencyRecurrence   frequency;

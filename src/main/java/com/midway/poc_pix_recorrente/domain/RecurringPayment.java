@@ -1,5 +1,6 @@
 package com.midway.poc_pix_recorrente.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -22,6 +23,7 @@ import java.util.UUID;
 public class RecurringPayment {
     @Id
     @GeneratedValue
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private UUID id;
     private String          description;
     private String          pixDestinationKey;
