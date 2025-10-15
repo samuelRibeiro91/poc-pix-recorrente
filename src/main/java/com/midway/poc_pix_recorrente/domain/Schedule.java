@@ -25,10 +25,10 @@ public class Schedule {
     private UUID id;
     private String                description;
     private FrequencyRecurrence   frequency;
-    private LocalDate startDate;
+    private LocalDate             startDate;
     private LocalDate             endDate;
     private int                   dayOfMonth;
-    private LocalDateTime created_at;
+    private LocalDateTime         created_at;
     private ScheduleStatus        status;
     private LocalDateTime         lastPaymentData;
 
