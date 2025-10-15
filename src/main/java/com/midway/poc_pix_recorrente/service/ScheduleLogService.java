@@ -2,7 +2,6 @@ package com.midway.poc_pix_recorrente.service;
 
 import com.midway.poc_pix_recorrente.domain.ScheduleLog;
 import com.midway.poc_pix_recorrente.repository.ScheduleLogRepository;
-import jakarta.persistence.Access;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
