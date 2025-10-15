@@ -102,8 +102,8 @@ When a new schedule is created:
 ### 🇧🇷 Português
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/seuusuario/pix-recorrente.git
-   cd pix-recorrente
+   git clone https://github.com/samuelRibeiro91/poc-pix-recorrente.git
+   cd poc-pix-recorrente
    ```
 2. Compile e execute:  
    ```bash
@@ -117,8 +117,8 @@ When a new schedule is created:
 ### 🇺🇸 English
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/recurring-pix.git
-   cd recurring-pix
+   git clone https://github.com/samuelRibeiro91/poc-pix-recorrente.git
+   cd poc-pix-recorrente
    ```
 2. Build and run:  
    ```bash
