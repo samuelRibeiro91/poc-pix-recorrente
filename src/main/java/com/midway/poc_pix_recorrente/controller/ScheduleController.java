@@ -1,6 +1,7 @@
 package com.midway.poc_pix_recorrente.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.midway.poc_pix_recorrente.DTO.FraudDetectionReturnDTO;
 import com.midway.poc_pix_recorrente.domain.IdempotencyKeys;
 import com.midway.poc_pix_recorrente.domain.Schedule;
@@ -36,6 +37,7 @@ public class ScheduleController {
 
     private String scheduleToJSON(Schedule schedule) {
         try {
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             return objectMapper.writeValueAsString(schedule);
         } catch (Exception e) {
             throw new RuntimeException("Erro ao serializar Agendamento", e);
