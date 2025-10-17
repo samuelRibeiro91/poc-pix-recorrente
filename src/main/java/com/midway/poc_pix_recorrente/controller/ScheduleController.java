@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.midway.poc_pix_recorrente.DTO.FraudDetectionReturnDTO;
 import com.midway.poc_pix_recorrente.domain.IdempotencyKeys;
 import com.midway.poc_pix_recorrente.domain.Schedule;
+import com.midway.poc_pix_recorrente.repository.CustomerRepository;
 import com.midway.poc_pix_recorrente.repository.IdempotencyKeysRepository;
 import com.midway.poc_pix_recorrente.service.FraudDetectionService;
 import com.midway.poc_pix_recorrente.service.ScheduleService;
@@ -31,6 +32,9 @@ public class ScheduleController {
 
     @Autowired
     private final IdempotencyKeysRepository idempotencyKeysRepository;
+
+    @Autowired
+    private final CustomerRepository customerRepository;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -61,6 +65,11 @@ public class ScheduleController {
             return ResponseEntity.status(existing.get().getHttp_status())
                     .body(existing.get().getResponse_body());
         }
+
+
+        if (customerRepository.findById(body.getCustomer().getId()).isEmpty())
+            customerRepository.save(body.getCustomer());
+
 
         FraudDetectionReturnDTO fraudDetectionReturnDTO = fraudDetectionService.validateSchedule(body);
 
